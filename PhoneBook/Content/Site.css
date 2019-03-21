@@ -1,0 +1,126 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+ Set padding to keep content from hitting the edges 
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default 
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+/* Zebra striping */
+
+tr:nth-of-type(odd) {
+    background: #f4f4f4;
+}
+
+tr:nth-of-type(even) {
+    background: #fff;
+}
+
+th {
+    background: #782f40;
+    color: #ffffff;
+    font-weight: 300;
+}
+
+td,
+th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+    td:nth-of-type(1) {
+        font-weight: 500 !important;
+    }
+
+td {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
+    line-height: 20px;
+}
+
+span {
+    font-style: italic
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+
+    /* Force table to not be like tables anymore */
+    table.responsive,
+    .responsive thead,
+    .responsive tbody,
+    .responsive th,
+    .responsive td,
+    .responsive tr {
+        display: block !important;
+    }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+    .responsive thead tr {
+        position: absolute !important;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .responsive tr {
+        border: 1px solid #ccc;
+    }
+
+    .responsive td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee !important;
+        position: relative !important;
+        padding-left: 25% !important;
+    }
+
+    .responsive td:before {
+        /* Now like a table header */
+        position: absolute !important;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap !important;
+        font-weight: 500 !important;
+    }
+
+        /*
+	Label the data
+	*/
+        .responsive td:before {
+            content: attr(data-table-header) !important;
+        }
+
+       thead th.sorting::after {
+            content: "\f0dc";
+            color: #ddd;
+            font-size: 0.8em;
+            padding-top: 0.12em;
+        }
+
+       thead th.sorting_asc::after {
+            content: "\f0de";
+        }
+
+       thead th.sorting_desc::after {
+            content: "\f0dd";
+        }
+}

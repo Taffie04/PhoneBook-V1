@@ -1,0 +1,34 @@
+﻿@model PhoneBook.Models.Contact
+@using PhoneBook.Models
+
+<div class="form-horizontal">
+
+    @Html.HiddenFor(x => x.ContactId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-6 editor-field">
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div id="phoneNumbers">
+        @Html.EditorFor(x => x.PhoneNumbers)
+    </div>
+
+    <div id="emailAdd">
+        @Html.EditorFor(x => x.EmailAddress)
+    </div>
+
+    <p>
+        @Html.AddLink("+ Phone", "#phoneNumbers", ".phoneNumber", "PhoneNumbers", typeof(PhoneBook.Models.Phone))
+        @Html.AddLink("+ Email", "#emailAdd", ".emailAdd", "EmailAddress", typeof(PhoneBook.Models.Email))
+    </p>
+</div>

@@ -1,0 +1,26 @@
+﻿@model PhoneBook.Models.Email
+@using PhoneBook.Models
+
+<div class="emailAdd">
+    <div class="form-group form-inline">
+        @Html.LabelFor(model => model.EmailAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.HiddenFor(model => model.DeleteEmail, new { @class = "mark-for-delete" })
+            @Html.RemoveLink("Remove", "div.emailAdd", "input.mark-for-delete")
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+        function removeNestedForm(element, container, deleteElement) {
+            $container = $(element).parents(container);
+            $container.find(deleteElement).val('True');
+            $container.hide();
+        }
+
+    </script>
+}
